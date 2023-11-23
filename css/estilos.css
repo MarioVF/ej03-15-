@@ -1,0 +1,21 @@
+header{
+    text-align: center;
+}
+
+#formulario{
+    width: 50%;
+    min-width: 200px;
+    margin: auto;
+    padding: 5%;
+
+    border-radius: 5px;
+    
+    color: white;
+    background-color: darkgrey;
+}
+
+.campoForm label{
+}
+
+.campoForm input{
+}
