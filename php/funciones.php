@@ -158,4 +158,26 @@
             echo '</table>';
         }
     }
+
+    function getUser($nombre) {
+        $user = [];
+
+        try {
+            $conn = new mysqli(HOST, USER, PASS, DB);
+
+            // Se obtiene el usuario con el nombre indicado
+            $query = "SELECT * FROM usuarios WHERE nombre = '$nombre'";
+
+            $result = $conn->query($query);
+
+            if ($result && $result->num_rows > 0) {
+                $user = $result->fetch_row(MYSQLI_ASSOC);
+            }
+
+            $conn->close();
+            return $user;
+        } catch (Exception $e) {
+            die("Conexión fallida: " . $e->getMessage());
+        }
+    }
 ?>
